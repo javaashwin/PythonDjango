@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Welcome {% endblock %}
+{% block content %}
+
+<h1>Welcome to the Welcome page</h1>
+
+<p>this is a demo paragraph to test weather this is working</p>
+
+<h1>{{message}}</h1>
+
+<h1>{{message1}}</h1>
+
+<h2>Meetings</h2>
+
+<ul>
+    {% for meeting in meetings  %}
+    <li>
+        <a href="{% url 'detail' meeting.id %}">
+            {{meeting.title}}
+        </a>
+
+    </li>
+    {% endfor %}
+
+
+</ul>
+
+<a href="{% url 'rooms' %}">roomslist</a>
+
+{% endblock %}
